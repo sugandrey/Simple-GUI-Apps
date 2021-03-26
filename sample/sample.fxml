@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<GridPane fx:id="mainGridPane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="sample.Controller"
+          alignment="CENTER" stylesheets="@styles.css">
+    <VBox>
+        <MenuBar GridPane.rowIndex="0" GridPane.columnIndex="0">
+            <Menu text="Contacts">
+                <MenuItem text="New" onAction="#newDialogWindow"/>
+                <SeparatorMenuItem/>
+                <MenuItem text="Edit" onAction="#editContact"/>
+                <SeparatorMenuItem/>
+                <MenuItem text="Delete" onAction="#deleteContact"/>
+                <SeparatorMenuItem/>
+                <MenuItem text="Exit" onAction="#exit"/>
+            </Menu>
+        </MenuBar>
+    <TableView fx:id="listContacts" prefWidth="800" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="First Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="firstName"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Last Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="lastName"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Phone Number">
+                <cellValueFactory>
+                    <PropertyValueFactory property="phoneNumber"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Notes">
+                <cellValueFactory>
+                    <PropertyValueFactory property="notes"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    </VBox>
+</GridPane>
